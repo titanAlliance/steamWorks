@@ -42,12 +42,12 @@ public class autoRight30 extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.driveTrain.driveManual(0f, 0f, .25f);
+    	Robot.driveTrain.driveManual(0f, 0f, .5f);
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return Math.abs(Robot.driveTrain.getGyroAngle()) > 30.0;
+        return Math.abs(Robot.driveTrain.getGyroAngle()) > 50.0;
     }
 
     // Called once after isFinished returns true

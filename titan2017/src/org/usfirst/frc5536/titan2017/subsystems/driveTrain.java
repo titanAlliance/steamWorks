@@ -102,12 +102,32 @@ public class driveTrain extends Subsystem {
     
     // Returns front ultrasonic measurement
 	public double getFrontDistance(){
-		return(frontUltrasonic.getRangeInches());
+		double checkFrontDistance = frontUltrasonic.getRangeInches();
+		double returnDistance;
+		
+		if(checkFrontDistance > 401){
+			returnDistance = 400;
+		} else if(checkFrontDistance < 3){
+			returnDistance = 0;
+		} else {
+			returnDistance = checkFrontDistance;
+		}
+		return(returnDistance);
 	}
 	
 	// Returns rear ultrasonic measurement
 	public double getRearDistance(){
-		return(rearUltrasonic.getRangeInches());
+		double checkRearDistance = rearUltrasonic.getRangeInches();
+		double returnDistance;
+		
+		if(checkRearDistance > 401){
+			returnDistance = 400;
+		} else if(checkRearDistance < 3){
+			returnDistance = 0;
+		} else {
+			returnDistance = checkRearDistance;
+		}
+		return(returnDistance);
 	}
     
     public void testingInfo(){

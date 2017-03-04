@@ -59,11 +59,11 @@ public class claw extends Subsystem {
     }
     
     public void clawOpen() {
-    	gripSolenoid.set(false);
+    	gripSolenoid.set(true);
     }
     
     public void clawClose() {
-    	gripSolenoid.set(true);
+    	gripSolenoid.set(false);
     }
 }
 
