@@ -106,9 +106,9 @@ public class driveTrain extends Subsystem {
 	}
 	
 	// Returns rear ultrasonic measurement
-		public double getRearDistance(){
-			return(rearUltrasonic.getRangeInches());
-		}
+	public double getRearDistance(){
+		return(rearUltrasonic.getRangeInches());
+	}
     
     public void testingInfo(){
     	SmartDashboard.putNumber("The front left val:", leftFront.get());
