@@ -47,7 +47,7 @@ public class autoRevFromPeg extends Command {
     	double angle = Robot.driveTrain.getGyroAngle();
     	float turnValue = (float) ((0 - angle) * Kp);
     	
-    	Robot.driveTrain.driveManual(0f, .6f, turnValue);
+    	Robot.driveTrain.driveManual(0f, .7f, turnValue);
     }
 
     // Make this return true when this Command no longer needs to run execute()

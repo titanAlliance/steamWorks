@@ -85,7 +85,7 @@ public class Robot extends IterativeRobot {
         autoChooser.addObject("Left Gear", new leftGearScore());
         autoChooser.addObject("Right Gear", new rightGearScore());
         autoChooser.addObject("Red Alliance High Goal", new redAllianceAutoHighGoalScore());
-        autoChooser.addObject("Red Alliance High Goal", new blueAllianceAutoHighGoalScore());
+        autoChooser.addObject("Blue Alliance High Goal", new blueAllianceAutoHighGoalScore());
         SmartDashboard.putData("Auto Chooser", autoChooser);
         
         server = CameraServer.getInstance();

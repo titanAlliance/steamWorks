@@ -85,17 +85,17 @@ public class OI {
         climbCamBtn.whenPressed(new cameraClimb());
         xbox1 = new Joystick(0);
         
-        reverseShooterBtn = new JoystickButton(xbox1, 2);
+        reverseShooterBtn = new JoystickButton(xbox1, 7);
         reverseShooterBtn.whileHeld(new reverseShooter());
         upBtn = new JoystickButton(xbox1, 6);
         upBtn.whenPressed(new clawUp());
         downBtn = new JoystickButton(xbox1, 5);
         downBtn.whenPressed(new clawDown());
-        openBtn = new JoystickButton(xbox1, 7);
+        openBtn = new JoystickButton(xbox1, 2);
         openBtn.whenPressed(new clawOpen());
-        closeBtn = new JoystickButton(xbox1, 8);
+        closeBtn = new JoystickButton(xbox1, 4);
         closeBtn.whenPressed(new clawClose());
-        climbBtn = new JoystickButton(xbox1, 4);
+        climbBtn = new JoystickButton(xbox1, 8);
         climbBtn.whileHeld(new climbRope());
         fireBtn = new JoystickButton(xbox1, 3);
         fireBtn.whileHeld(new fireBalls());
