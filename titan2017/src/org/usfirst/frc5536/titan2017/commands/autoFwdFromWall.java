@@ -51,7 +51,7 @@ public class autoFwdFromWall extends Command {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return Robot.driveTrain.getRearDistance() > 82.0;
+        return Robot.driveTrain.getRearDistance() > 78.0;
     }
 
     // Called once after isFinished returns true

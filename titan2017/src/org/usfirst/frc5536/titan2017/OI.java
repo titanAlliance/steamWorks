@@ -91,9 +91,9 @@ public class OI {
         upBtn.whenPressed(new clawUp());
         downBtn = new JoystickButton(xbox1, 5);
         downBtn.whenPressed(new clawDown());
-        openBtn = new JoystickButton(xbox1, 2);
+        openBtn = new JoystickButton(xbox1, 4);
         openBtn.whenPressed(new clawOpen());
-        closeBtn = new JoystickButton(xbox1, 4);
+        closeBtn = new JoystickButton(xbox1, 2);
         closeBtn.whenPressed(new clawClose());
         climbBtn = new JoystickButton(xbox1, 8);
         climbBtn.whileHeld(new climbRope());
