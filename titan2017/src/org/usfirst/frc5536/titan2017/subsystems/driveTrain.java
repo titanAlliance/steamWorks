@@ -102,13 +102,13 @@ public class driveTrain extends Subsystem {
     
     // Returns front ultrasonic measurement
 	public double getFrontDistance(){
-		double checkFrontDistance = frontUltrasonic.getRangeInches();
+		double checkFrontDistance = smoothFrontUltra(frontUltrasonic.getRangeInches());
 		double returnDistance;
 		
-		if(checkFrontDistance > 401){
-			returnDistance = 400;
-		} else if(checkFrontDistance < 3){
-			returnDistance = 0;
+		if(checkFrontDistance > 250){
+			returnDistance = 250;
+		} else if(checkFrontDistance < 2){
+			returnDistance = 2;
 		} else {
 			returnDistance = checkFrontDistance;
 		}
@@ -117,17 +117,33 @@ public class driveTrain extends Subsystem {
 	
 	// Returns rear ultrasonic measurement
 	public double getRearDistance(){
-		double checkRearDistance = rearUltrasonic.getRangeInches();
+		double checkRearDistance = smoothRearUltra(rearUltrasonic.getRangeInches());
 		double returnDistance;
 		
-		if(checkRearDistance > 401){
-			returnDistance = 400;
-		} else if(checkRearDistance < 3){
-			returnDistance = 0;
+		if(checkRearDistance > 250){
+			returnDistance = 250;
+		} else if(checkRearDistance < 2){
+			returnDistance = 2;
 		} else {
 			returnDistance = checkRearDistance;
 		}
 		return(returnDistance);
+	}
+	
+	public double smoothFrontUltra(double smoothedValue){
+		double gain = 0.1;
+		double sensorValue = frontUltrasonic.getRangeInches();
+		
+		smoothedValue = (sensorValue * (1 - gain)) + (smoothedValue * gain);
+		return smoothedValue;
+	}
+	
+	public double smoothRearUltra(double smoothedValue){
+		double gain = 0.1;
+		double sensorValue = rearUltrasonic.getRangeInches();
+		
+		smoothedValue = (sensorValue * (1 - gain)) + (smoothedValue * gain);
+		return smoothedValue;
 	}
     
     public void testingInfo(){
@@ -140,8 +156,8 @@ public class driveTrain extends Subsystem {
     	SmartDashboard.putNumber("The accelerometer x value is:", accelerometer.getX());
     	SmartDashboard.putNumber("The accelerometer y value is:", accelerometer.getY());
     	
-    	SmartDashboard.putNumber("Distance to Object Front", frontUltrasonic.getRangeInches());
-    	SmartDashboard.putNumber("Distance to Object Rear", rearUltrasonic.getRangeInches());
+    	SmartDashboard.putNumber("Distance to Object Front", getFrontDistance());
+    	SmartDashboard.putNumber("Distance to Object Rear", getRearDistance());
     }
     
 }
