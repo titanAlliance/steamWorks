@@ -75,7 +75,7 @@ public class driveTrain extends Subsystem {
 		y = cubicScale(y);
 		z = cubicScale(z);
 		
-    	mecanumDrive.mecanumDrive_Cartesian(x, y, z, 0.0);
+    	mecanumDrive.mecanumDrive_Cartesian(-x,-y, z, 0.0);
     	//mecanumDrive.mecanumDrive_Cartesian(x, y, z, gyro.getAngle());
     	
     }

@@ -53,8 +53,8 @@ public class cameraMount extends Subsystem {
     }
     
     public void gearPosition(){
-    	xServo.set(1.0);
-    	yServo.set(.7);
+    	xServo.set(.05);
+    	yServo.set(.55);
     }
     
     public void fillPosition(){

@@ -42,11 +42,11 @@ public class driveManual extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     	    	
-    	float x = (float) Robot.oi.xbox1.getRawAxis(0);
+    	float x = (float) Robot.oi.leftJoystick.getRawAxis(0);
     	//float x = (float) Robot.oi.joystick1.getX();
-    	float y = (float) Robot.oi.xbox1.getRawAxis(1);
+    	float y = (float) Robot.oi.leftJoystick.getRawAxis(1);
     	//float y = (float) Robot.oi.joystick1.getY();
-    	float twist = (float) Robot.oi.xbox1.getRawAxis(4) * TWISTMOD;
+    	float twist = (float) Robot.oi.rightJoystick.getRawAxis(0) * TWISTMOD;
     	//float twist = (float) Robot.oi.joystick2.getX() * TWISTMOD;
     	
     	if(Math.abs(x) <= 0.05){
